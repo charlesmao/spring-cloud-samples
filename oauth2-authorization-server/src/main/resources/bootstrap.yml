@@ -1,0 +1,21 @@
+server:
+  port: 9200
+spring:
+  application:
+    name: auth-server
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

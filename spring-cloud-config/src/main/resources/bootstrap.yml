@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/charlesmao/spring-cloud-samples.git
+          search-paths: config-repo
+          #username:
+          #password:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8769
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
