@@ -1,8 +1,10 @@
 server:
-  port: 9200
+  port: 5000
+  servlet:
+    context-path: /uaa
 spring:
   application:
-    name: auth-server
+    name: auth-service
 
 eureka:
   instance:
@@ -19,3 +21,4 @@ management:
   endpoint:
     health:
       show-details: always
+
