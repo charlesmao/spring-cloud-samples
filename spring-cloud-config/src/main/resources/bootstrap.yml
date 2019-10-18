@@ -1,14 +1,18 @@
 server:
   port: 8888
 spring:
+  profiles:
+    active: native
   application:
     name: spring-cloud-config
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/charlesmao/spring-cloud-samples.git
-          search-paths: config-repo
+        native:
+          search-locations: E:/maozy/MyGithub/spring-cloud-samples/config-repo  #明确采用该目录下配置
+        #git:
+          #uri: https://github.com/charlesmao/spring-cloud-samples.git
+          #search-paths: config-repo
           #username:
           #password:
   boot:

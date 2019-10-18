@@ -9,11 +9,12 @@ spring:
       discovery:
         locator:
           enabled: true
-      routes:
-      - id: route-user-provider
-        uri: lb://user-provider
-        predicates:
-        - Path=/user/**
+          lower-case-service-id: true
+      #routes:
+      #- id: route-user-provider
+        #uri: lb://user-provider
+        #predicates:
+        #- Path=/user/**
   boot:
     admin:
       client:

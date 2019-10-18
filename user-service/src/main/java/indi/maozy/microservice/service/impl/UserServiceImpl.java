@@ -1,7 +1,7 @@
 package indi.maozy.microservice.service.impl;
 
-import indi.maozy.microservice.dao.UserRepository;
-import indi.maozy.microservice.entity.User;
+import indi.maozy.microservice.repository.UserRepository;
+import indi.maozy.microservice.domain.User;
 import indi.maozy.microservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

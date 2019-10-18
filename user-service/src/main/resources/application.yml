@@ -1,11 +1,7 @@
-server:
-  port: 8762
 spring:
-  application:
-    name: user-service
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/oauth2?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth2?useUnicode=true&characterEncoding=utf8&useSSL=false&useTimezone=true&serverTimezone=GMT%2B8
     username: root
     password: 123456
   jpa:
@@ -17,11 +13,16 @@ security:
   oauth2:
     resource:
       #获取当前Token的用户信息
-      user-info-uri: http://localhost:5000/uaa/users/current
+      user-info-uri: http://localhost:5000/auth/me
+      token-info-uri: http://localhost:5000/auth/oauth/check_token
+      prefer-token-info: true
     client:
       client-id: user-service
       client-secret: 123456
       #获取Token
-      access-token-uri: http://localhost:5000/uaa/oauth/token
+      access-token-uri: http://localhost:5000/auth/oauth/token
       grant-type: client_credentials,password
-      scope: server
+      scope: all
+      user-authorization-uri: http://localhost:5000/auth/oauth/authorize
+    authorization:
+      check-token-access: http://localhost:5000/auth/oauth/check_token

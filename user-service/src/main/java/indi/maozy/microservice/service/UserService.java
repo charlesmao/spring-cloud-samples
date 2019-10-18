@@ -1,6 +1,6 @@
 package indi.maozy.microservice.service;
 
-import indi.maozy.microservice.entity.User;
+import indi.maozy.microservice.domain.User;
 
 /**
  * 描述:

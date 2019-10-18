@@ -1,23 +1,22 @@
 package indi.maozy.microservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
 /**
  * 描述:
- * 用户控制器
  *
  * @author 毛中勇
- * @create 2019-06-27 17:17
+ * @create 2019-10-18 17:09
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("users")
 public class UserController {
 
-    @GetMapping("/current")
+    @RequestMapping(value = "/current", method = RequestMethod.GET)
     public Principal getUser(Principal principal) {
         return principal;
     }
